@@ -1,0 +1,80 @@
+.sec_1 {
+  background-color: $main-color;
+  width: 100%;
+  .container {
+    @extend %myContainer;
+    @include flexContainer(space-evenly);
+    height: 400px;
+    background-color: $container-color;
+
+    .box1,
+    .box2,
+    .box3 {
+      width: 150px;
+      height: 150px;
+      border-radius: 10px;
+    }
+
+    .box1 {
+      background-color: $color1;
+    }
+
+    .box2 {
+      background-color: $color2;
+    }
+
+    .box3 {
+      background-color: $color3;
+    }
+
+    @media only screen and (max-width: 500px) {
+      @include flexContainer(center, center, column);
+      padding: 30px 0;
+      .box1,
+      .box2,
+      .box3 {
+        margin: 10px;
+      }
+    }
+  }
+}
+
+.sec_2 {
+  background-color: $container-color;
+  width: 100%;
+  .container {
+    @extend %myContainer;
+    @include flexContainer(space-between);
+    height: 300px;
+    background-color: $main-color;
+
+    .box1,
+    .box2,
+    .box3 {
+      width: 160px;
+      height: 160px;
+      border-radius: 10px;
+
+      @media only screen and (max-width: 500px) {
+        margin: 10px;
+      }
+    }
+
+    .box1 {
+      background-color: $color3;
+    }
+
+    .box2 {
+      background-color: $color1;
+    }
+
+    .box3 {
+      background-color: $color2;
+    }
+
+    @media only screen and (max-width: 500px) {
+      @include flexContainer(center, center, column);
+      padding: 30px 0;
+    }
+  }
+}
